@@ -1,0 +1,31 @@
+@startuml
+object train{
+idtrain
+model
+color
+wheels
+}
+object trainWheel
+trainWheel <|--train
+object railroad
+object road
+trainWheel<|-- road
+trainWheel <|-- railroad
+map On{
+}
+map move{
+Start=>End
+}
+map stop{
+Start=>End
+}
+map off{
+Start=>End
+}
+
+train -->On
+On--> move: m
+On --> stop: s
+stop --off: o
+move --off:o
+@enduml

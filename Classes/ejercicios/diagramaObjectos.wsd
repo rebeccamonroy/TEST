@@ -1,0 +1,28 @@
+@startuml hangman
+HANGMAN *-- player 
+Board *-down- maxAttempts
+HANGMAN *-- turn
+Board <-- turn
+player <-- turn
+wordbanktype -up-* HANGMAN 
+easy -up-|> wordbanktype 
+difficult -up-|> wordbanktype 
+veryDifficult -up-|> wordbanktype 
+wordbanktype *-- attempts
+word "#"-up-* wordbanktype 
+HANGMAN *-down- Board 
+counter -up-* Board
+secretWord -up-* Board 
+character "#"-up-* secretWord
+positionNumber -up-* character
+wasGuessed -up-* character
+char -up-* character
+printHangmanIcon -up-* Board
+player *-- goal 
+goal <|-- getSelectedLetter
+goal <|-- getPlayerWord
+playertype -up-o player
+playertype <|-- wordGiven
+playertype <|-- wordGuesser 
+Board <-right- player
+@enduml

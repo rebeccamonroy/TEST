@@ -1,0 +1,4 @@
+@startum vocabulary
+TicTac *-- down
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml InterfaceStereotypeFontColor
+
+    object player{
+
+    }
+
+    object guesser{
+
+    }
+
+    object giver{
+
+    }
+
+    object goalGuesser{
+
+    }
+
+    object goalGiver{
+
+    }
+
+    object giveHint{
+    
+    }
+
+    guesser --> playergiver
+    giver --|> player
+
+    guesser o-- goalGuesser
+     giver o-- goalGiver
+
+     giveHint --|> goalGuesser
+     goalGiver --|> goalGuesser
+
+
+@enduml

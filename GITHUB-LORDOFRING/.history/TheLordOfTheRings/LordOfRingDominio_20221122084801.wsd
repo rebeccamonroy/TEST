@@ -1,0 +1,36 @@
+@startuml ElSeñordelosAnillos
+
+TheLordOfTheRings *-- Personaje
+
+package "personajes"{
+Personaje <|-- Heroes
+Personaje <|-- Bestias
+Heroes <|-- Elfos
+Heroes <|-- Hobbits
+Heroes <|-- Humanos
+Bestias <|-- Orcos
+Bestias <|-- Trasgos 
+}
+
+Personaje *-- Vida
+Personaje *-- Armadura 
+Personaje *-up- Ataque
+Personaje *-up- goal
+goal *-- Battle
+
+TheLordOfTheRings *-right- Turn
+TheLordOfTheRings *-- Board
+
+Turn *-up- Movimiento 
+numeroTiros *-[dashed]- Battle
+Board *-- Batallones
+Batallones *-- Personaje
+Batallones *-- enCola
+Battle o-left- Winner 
+Battle o-right- Loser
+Personaje *-right- modificarDefensa
+
+Board <-- Turn
+
+
+@enduml

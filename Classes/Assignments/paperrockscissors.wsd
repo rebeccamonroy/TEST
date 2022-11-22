@@ -1,0 +1,41 @@
+@startuml
+
+object computer
+object person
+enum scissors
+enum rock
+enum paper
+
+class player{
+-idPlayer
+-namePlayer
++optionSelected()
++getScore()
+}
+player *-- scissors
+player  *-- rock
+player *-- paper
+
+computer<|--player
+person<|--player
+
+player --> decision
+enum won
+enum lost
+enum tie
+
+interface decision{
+isMorethan()
+isLessthan()
+isEqualTo()
+}
+class result implements decision{
+isMorethan()
+isLessthan()
+isEqualTo()
+}
+result*--->won
+result*--->lost
+result*--->tie
+
+@enduml

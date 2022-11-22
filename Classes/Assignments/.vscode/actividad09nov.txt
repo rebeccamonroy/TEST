@@ -1,0 +1,23 @@
+DOMAIN DIAGRAM
+@startuml
+HANGMAN *--> player
+HANGMAN *--> round
+player <-- singleplayer
+singleplayer <-- timed
+singleplayer <-- untimed
+player <-- randomplayer
+wordbank o-- HANGMAN
+wordbank <-- words
+levels *-- words
+easy o-- levels
+difficult o-- levels
+veryDifficult o-- levels
+HANGMAN *--> hangmanView
+player *--> hangmanView
+@enduml
+
+ACTIVITY DIAGRAM
+
+
+STATE DIAGRAM
+

@@ -1,0 +1,49 @@
+@startuml hangman
+class Player{
+    -name : String
+    +String toString()
+}
+
+class Board{
+    -maxAttempts : Integer
+    -counter : Integer
+    -secretWord : SecretWord
+    +boolean tryHintCharacter()
+    +boolean tryHintWord()
+    +void printBoard()
+    +boolean wasGuessed()
+    +void hangmanIcon()
+    +void setSecretWord()
+    +boolean otherTurn()
+}
+
+class HANGMAN{
+    -WordBankType: Object
+    -Board: Object
+    -Turn: Object
+    -Player: Object
+    +void initGame()
+    +Player createGuessPlayer()
+    -void generateSecretWord()
+}
+
+class Input{
+    +String getString()
+    +Integer getInteger()
+}
+
+class SecretWord{
+    -secretWordGenerate : String
+    +String getHiddenWord()
+    +bolean exists()
+    +boolean isWord()
+    +String getUnHiddenWord()
+}
+
+class Turn{
+    +Board board
+    +Player player
+    +void execute()
+    
+}
+@enduml
